@@ -23,7 +23,15 @@ public class Control extends Thread{
     }
 
     public void run() {
+        int i, j;
         while (true) {
+            for (i=0; i < lineas.size(); i++) {    
+                for (j=0; j < lineas.get(i).getMarquesinas().size(); j++) {
+                    if (lineas.get(i).getMarquesinas().get(j).getViajerosBus().size() > 0 ) {
+                        System.out.println("Marquesina tiene viajeros");
+                    }
+                }
+            }
             
         }
     } 

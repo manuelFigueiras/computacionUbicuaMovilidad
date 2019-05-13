@@ -19,6 +19,7 @@ public class Marquesina {
     public  Marquesina(int xBus, int yBus){
         this.xBus=xBus;
         this.yBus=yBus;
+        this.viajeros = new ArrayList<>();
     }
 
     public int getxBus() {
