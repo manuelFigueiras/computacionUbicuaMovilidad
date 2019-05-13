@@ -5,6 +5,7 @@
  */
 package compubicuasmartcity;
 
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
@@ -29,9 +30,21 @@ public class main {
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
-        //Inicializamos las dos lineas con sus respectivas marquesinas
-        movilidad.inicializar();
-    
+          //Inicializamos las dos lineas con sus respectivas marquesinas
+        Linea linea1 = new Linea(1);
+        Linea linea2 = new Linea(2);
+        
+        linea1.setMarquesinas(movilidad.inicializar(linea1));
+        linea2.setMarquesinas(movilidad.inicializar(linea2));
+        ArrayList<Linea> lineas = new ArrayList();
+        lineas.add(linea1);
+        lineas.add(linea2);
+        try {
+            Control control = new Control(lineas);
+            control.start();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
         
     
 

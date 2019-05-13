@@ -19,6 +19,10 @@ public class Linea {
         this.numLinea = numLinea;
         this.marquesinas=marquesinas;
     }
+    
+    public Linea(int numLinea) {
+        this.numLinea = numLinea;
+    }
 
     public int getNumLinea() {
         return numLinea;

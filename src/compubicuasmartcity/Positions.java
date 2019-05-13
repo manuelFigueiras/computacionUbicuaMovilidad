@@ -58,17 +58,19 @@ public class Positions extends JPanel {
     private Marquesina marquesinaL13 = new Marquesina(640, 380);
 
 
-    public void inicializar(){
-        ArrayList<Marquesina> marque = new ArrayList<>();
+    public ArrayList<Marquesina> inicializar(Linea l){
+        ArrayList<Marquesina> marque1 = new ArrayList<>();
         ArrayList<Marquesina> marque2 = new ArrayList<>();
-        marque.add(marquesinaL11);
-        marque.add(marquesinaL12);
-        marque.add(marquesinaL13);
+        marque1.add(marquesinaL11);
+        marque1.add(marquesinaL12);
+        marque1.add(marquesinaL13);
         
         marque2.add(marquesinaL2);
-        
-        Linea l1 = new Linea(1, marque);
-        Linea l2 = new Linea(2, marque2);
+        if (l.getNumLinea() == 1) {
+            return marque1;
+        } else {
+            return marque2;
+        }
     }
     
     
