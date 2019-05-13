@@ -9,16 +9,22 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Manuel_Figueiras
+ * @author Jose Cutrín
  */
-public final class Control {
+
+public class Control extends Thread{
     
-    private boolean sennal;
-    private ArrayList<Marquesina> marquesinas;
+    private ArrayList<Linea> lineas;
     
-    private Control(){
+    
+    public Control(ArrayList<Linea> lineas){
+        this.lineas = lineas;
         
     }
 
-    
+    public void run() {
+        while (true) {
+            
+        }
+    } 
 }
