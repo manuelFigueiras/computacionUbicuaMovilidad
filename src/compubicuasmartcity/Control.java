@@ -6,6 +6,7 @@
 package compubicuasmartcity;
 
 import java.util.ArrayList;
+import javax.swing.JFrame;
 
 /**
  *
@@ -15,11 +16,14 @@ import java.util.ArrayList;
 public class Control extends Thread{
     
     private ArrayList<Linea> lineas;
+    private FrameControl frameControl;
     
     
     public Control(ArrayList<Linea> lineas){
         this.lineas = lineas;
-        
+        this.frameControl = new FrameControl();
+  
+        this.frameControl.setVisible(true);
     }
 
     public void run() {
@@ -28,7 +32,7 @@ public class Control extends Thread{
             for (i=0; i < lineas.size(); i++) {    
                 for (j=0; j < lineas.get(i).getMarquesinas().size(); j++) {
                     if (lineas.get(i).getMarquesinas().get(j).getViajerosBus().size() > 0 ) {
-                        System.out.println("Marquesina tiene viajeros");
+                        frameControl.linea1Marquesina0Field.setText(String.valueOf(lineas.get(i).getMarquesinas().get(j).getViajerosBus().size()));
                     }
                 }
             }

@@ -49,13 +49,13 @@ public class Positions extends JPanel {
     
     
     //Posicion marquesina 1
-    private Marquesina marquesinaL11 = new Marquesina(0, 380);
+    private Marquesina marquesinaL11 = new Marquesina(0, 370);
     //Posicion marquesina 2
-    private Marquesina marquesinaL2 = new Marquesina(380, 300);    
+    private Marquesina marquesinaL2 = new Marquesina(380, 370);    
     //Posicion marquesina 3
-    private Marquesina marquesinaL12 = new Marquesina(340, 330);
+    private Marquesina marquesinaL12 = new Marquesina(340, 370);
     //Posicion marquesina 4
-    private Marquesina marquesinaL13 = new Marquesina(640, 380);
+    private Marquesina marquesinaL13 = new Marquesina(640, 370);
 
 
     public ArrayList<Marquesina> inicializar(Linea l){

@@ -26,7 +26,7 @@ public class main {
         Positions movilidad = new Positions();
         frame.add(movilidad);
         //Dimensionamos la pantalla
-        frame.setSize(700, 700);
+        frame.setSize(900, 700);
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
@@ -45,6 +45,9 @@ public class main {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+        Viajero v1 = new Viajero("Alfonso","López Pérez",true,new Tarjeta(1,new Coordenadas(0,0),8.0f),5,5);
+        linea2.getMarquesinas().get(0).getViajerosBus().add(v1);
+
         
     
 

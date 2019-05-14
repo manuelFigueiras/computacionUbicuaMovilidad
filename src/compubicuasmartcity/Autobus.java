@@ -23,6 +23,7 @@ public class Autobus {
     private int tamannnoX;
     private int tamannoY;
     private boolean pararSiguienteMarquesina;
+    int viaje;
     
     public  Autobus(int numBus, int xBus, int yBus, ArrayList<Viajero> viajerosBus,int vX,int vY, int tx,int ty){
         this.numBus = numBus;
@@ -34,6 +35,7 @@ public class Autobus {
         this.tamannnoX=tx;
         this.tamannoY=ty;
         this.pararSiguienteMarquesina = false;
+        this.viaje = 0;
         
     }
 
@@ -96,6 +98,10 @@ public class Autobus {
     public int getTamannoY() {
         return tamannoY;
     }
+    
+    public int getViaje() {
+        return viaje;
+    }
 
     public void setTamannnoX(int tamannnoX) {
         this.tamannnoX = tamannnoX;
@@ -113,6 +119,9 @@ public class Autobus {
         this.pararSiguienteMarquesina = pararSiguienteMarquesina;
     }
     
+    public void nuevoViaje() {
+        this.viaje++;
+    }
     
     
     public void actualizarEstadoNumeroPersonas(){
