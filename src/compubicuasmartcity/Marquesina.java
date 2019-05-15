@@ -76,6 +76,7 @@ public class Marquesina {
             bus.getViajerosBus().add(this.viajeros.get(i));
             //Reseteamos la marquesina
             this.viajeros = new ArrayList<>();
+            bus.setPararSiguienteMarquesina(false);
             
         }
     }
