@@ -11,7 +11,7 @@ import java.util.ArrayList;
  *
  * @author Manuel_Figueiras
  */
-public class Marquesina {
+public class Marquesina { 
     private int xBus;
     private int yBus;
     private ArrayList<Viajero> viajeros;

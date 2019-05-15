@@ -45,8 +45,15 @@ public class main {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+        ArrayList<Autobus> busesLinea1 = new ArrayList<>();
+        ArrayList<Autobus> busesLinea2 = new ArrayList<>();
+        busesLinea1.add(movilidad.getAutobus(3));
+        busesLinea2.add(movilidad.getAutobus(2));
+        linea1.setAutobuses(busesLinea1);
+        linea2.setAutobuses(busesLinea2);
+        
         Viajero v1 = new Viajero("Alfonso","López Pérez",true,new Tarjeta(1,new Coordenadas(0,0),8.0f),5,5);
-        linea2.getMarquesinas().get(0).getViajerosBus().add(v1);
+        linea1.getMarquesinas().get(2).getViajerosBus().add(v1);
 
         
     

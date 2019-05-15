@@ -14,10 +14,12 @@ import java.util.ArrayList;
 public class Linea {
     private int numLinea;
     private ArrayList<Marquesina> marquesinas;
+    private ArrayList<Autobus> autobuses;
 
-    public Linea(int numLinea, ArrayList<Marquesina> marquesinas) {
+    public Linea(int numLinea, ArrayList<Marquesina> marquesinas, ArrayList<Autobus> autobuses) {
         this.numLinea = numLinea;
-        this.marquesinas=marquesinas;
+        this.marquesinas=marquesinas;   
+        this.autobuses = autobuses;
     }
     
     public Linea(int numLinea) {
@@ -38,5 +40,13 @@ public class Linea {
 
     public void setMarquesinas(ArrayList<Marquesina> marquesinas) {
         this.marquesinas = marquesinas;
+    }
+    
+    public ArrayList<Autobus> getAutobuses() {
+        return autobuses;
+    }
+    
+    public void setAutobuses(ArrayList<Autobus> autobuses) {
+        this.autobuses = autobuses;
     }
 }

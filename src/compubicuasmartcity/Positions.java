@@ -58,6 +58,21 @@ public class Positions extends JPanel {
     private Marquesina marquesinaL13 = new Marquesina(640, 370);
 
 
+  
+    
+    
+    
+    //Asignamos a cada marquesina los viajeros correspndientes
+  /*  ArrayList<Viajero> v = new ArrayList<>();
+    v.add*/
+   
+     //Autobús 1
+    public Autobus bus1 = new Autobus(1, 300, 0, new ArrayList<>(),0,1,20,50);
+    //Autobús 2
+    public Autobus bus2 = new Autobus(1, 58, 80, new ArrayList<>(),1,1,40,40);
+    //Autbus 3
+    public Autobus bus3 = new Autobus(1, 600, 350, new ArrayList<>(),1,0,50,20);
+    
     public ArrayList<Marquesina> inicializar(Linea l){
         ArrayList<Marquesina> marque1 = new ArrayList<>();
         ArrayList<Marquesina> marque2 = new ArrayList<>();
@@ -73,19 +88,25 @@ public class Positions extends JPanel {
         }
     }
     
+    public Autobus getAutobus(int num) {
+        Autobus bus;
+        switch (num) {
+            case 1: 
+                bus = this.bus1;
+                break;
+            case 2:
+                bus =  this.bus2;
+                break;
+            case 3:
+                bus = this.bus3;
+                break;
+            default: 
+                bus = null;
+                break; 
+        }
+        return bus;
+    }
     
-    
-    
-    //Asignamos a cada marquesina los viajeros correspndientes
-  /*  ArrayList<Viajero> v = new ArrayList<>();
-    v.add*/
-   
-     //Autobús 1
-    public Autobus bus1 = new Autobus(1, 300, 0, new ArrayList<>(),0,1,20,50);
-    //Autobús 2
-    public Autobus bus2 = new Autobus(1, 58, 80, new ArrayList<>(),1,1,40,40);
-    //Autbus 3
-    public Autobus bus3 = new Autobus(1, 600, 350, new ArrayList<>(),1,0,50,20);
     
     int flag1 = 0, flag2 = 0, flag3 = 0;
     //Movimientod de los autobuses
