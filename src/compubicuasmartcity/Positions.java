@@ -48,14 +48,20 @@ public class Positions extends JPanel {
     private Viajero viajero10 = new Viajero("Javier","Pintos Gómez",false,new Tarjeta(10,new Coordenadas(0,0),8.0f),5,5);
     
     
-    //Posicion marquesina 1
-    private Marquesina marquesinaL11 = new Marquesina(0, 370);
-    //Posicion marquesina 2
-    private Marquesina marquesinaL2 = new Marquesina(380, 370);    
-    //Posicion marquesina 3
-    private Marquesina marquesinaL12 = new Marquesina(340, 370);
-    //Posicion marquesina 4
-    private Marquesina marquesinaL13 = new Marquesina(600, 370);
+    // Marquesinas Línea 1
+    private Marquesina marquesinaL10 = new Marquesina(0, 370);
+    private Marquesina marquesinaL11 = new Marquesina(150,370);
+     private Marquesina marquesinaL12 = new Marquesina(340, 370);
+    private Marquesina marquesinaL13 = new Marquesina(490,370);
+    private Marquesina marquesinaL14 = new Marquesina(600, 370);
+    // Marquesinas Linea 2
+    private Marquesina marquesinaL20 = new Marquesina(380,0);
+    private Marquesina marquesinaL21 = new Marquesina(380, 180);
+    private Marquesina marquesinaL22 = new Marquesina(380, 370); 
+    private Marquesina marquesinaL23 = new Marquesina(380, 490);
+    private Marquesina marquesinaL24 = new Marquesina(380, 620);
+    
+   
 
 
   
@@ -67,20 +73,26 @@ public class Positions extends JPanel {
     v.add*/
    
      //Autobús 1
-    public Autobus bus1 = new Autobus(1, 300, 0, new ArrayList<>(),0,1,20,50);
+    public Autobus bus1 = new Autobus(2, 300, 0, new ArrayList<>(),0,1,20,50);
     //Autobús 2
-    public Autobus bus2 = new Autobus(1, 58, 80, new ArrayList<>(),1,1,40,40);
+    public Autobus bus2 = new Autobus(3, 58, 80, new ArrayList<>(),1,1,40,40);
     //Autbus 3
     public Autobus bus3 = new Autobus(1, 600, 350, new ArrayList<>(),1,0,50,20);
     
     public ArrayList<Marquesina> inicializar(Linea l){
         ArrayList<Marquesina> marque1 = new ArrayList<>();
         ArrayList<Marquesina> marque2 = new ArrayList<>();
+        marque1.add(marquesinaL10);
         marque1.add(marquesinaL11);
         marque1.add(marquesinaL12);
         marque1.add(marquesinaL13);
+        marque1.add(marquesinaL14);
         
-        marque2.add(marquesinaL2);
+        marque2.add(marquesinaL20);
+        marque2.add(marquesinaL21);
+        marque2.add(marquesinaL22);
+        marque2.add(marquesinaL23);
+        marque2.add(marquesinaL24);
         if (l.getNumLinea() == 1) {
             return marque1;
         } else {
@@ -203,14 +215,30 @@ public class Positions extends JPanel {
         g2d.fillRect(bus2.getxBus(), bus2.getyBus(), 30, 30);*/
         g2d.setColor(Color.green); 
         g2d.fillRect(bus3.getxBus(), bus3.getyBus(), bus3.getTamannnoX(), bus3.getTamannoY());
+        g2d.setColor(Color.black);
+        
+        // Pintamos marquesinas de la Línea 1
+        g2d.fillRect(marquesinaL10.getxBus(), marquesinaL10.getyBus(),50,20);
         g2d.setColor(Color.black); 
         g2d.fillRect(marquesinaL11.getxBus(), marquesinaL11.getyBus(),50, 20);
         g2d.setColor(Color.black); 
-        g2d.fillRect(marquesinaL2.getxBus(), marquesinaL2.getyBus(),20, 50);
-        g2d.setColor(Color.black); 
-        g2d.fillRect(marquesinaL12.getxBus(), marquesinaL12.getyBus(),50, 20);
+        g2d.fillRect(marquesinaL12.getxBus(), marquesinaL12.getyBus(),50, 20); 
         g2d.setColor(Color.black); 
         g2d.fillRect(marquesinaL13.getxBus(), marquesinaL13.getyBus(),50, 20);
+        g2d.setColor(Color.black);
+        g2d.fillRect(marquesinaL14.getxBus(), marquesinaL14.getyBus(),50, 20);
+        
+        // Pintamos marquesinas de la línea 2
+        g2d.setColor(Color.black); 
+        g2d.fillRect(marquesinaL20.getxBus(), marquesinaL20.getyBus(),20, 50);
+        g2d.setColor(Color.black); 
+        g2d.fillRect(marquesinaL21.getxBus(), marquesinaL21.getyBus(),20, 50);
+        g2d.setColor(Color.black); 
+        g2d.fillRect(marquesinaL22.getxBus(), marquesinaL22.getyBus(),20, 50);
+        g2d.setColor(Color.black); 
+        g2d.fillRect(marquesinaL23.getxBus(), marquesinaL23.getyBus(),20, 50);
+        g2d.setColor(Color.black); 
+        g2d.fillRect(marquesinaL24.getxBus(), marquesinaL24.getyBus(),20, 50);
         
     }
     

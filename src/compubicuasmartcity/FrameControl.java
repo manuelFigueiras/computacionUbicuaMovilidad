@@ -75,6 +75,7 @@ public class FrameControl extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Centro de control");
+        setLocation(new java.awt.Point(900, 200));
 
         jLabel1.setText("CENTRO DE CONTROL");
 
