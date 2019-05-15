@@ -48,7 +48,7 @@ public class main {
         ArrayList<Autobus> busesLinea1 = new ArrayList<>();
         ArrayList<Autobus> busesLinea2 = new ArrayList<>();
         busesLinea1.add(movilidad.getAutobus(3));
-        busesLinea2.add(movilidad.getAutobus(2));
+        busesLinea2.add(movilidad.getAutobus(1));
         linea1.setAutobuses(busesLinea1);
         linea2.setAutobuses(busesLinea2);
         

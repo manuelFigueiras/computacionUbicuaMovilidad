@@ -70,9 +70,8 @@ public class FrameControl extends javax.swing.JFrame {
         linea1BusStatus = new javax.swing.JTextArea();
         jPanel4 = new javax.swing.JPanel();
         jLabel20 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
-        autobus2ViajerosField = new javax.swing.JTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        linea2BusStatus = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Centro de control");
@@ -417,36 +416,19 @@ public class FrameControl extends javax.swing.JFrame {
 
         jLabel20.setText("Estado autobús 2");
 
-        jLabel22.setText("Viajeros: ");
-
-        jLabel24.setText("Posicion:");
-
-        autobus2ViajerosField.setEditable(false);
-        autobus2ViajerosField.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        autobus2ViajerosField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                autobus2ViajerosFieldActionPerformed(evt);
-            }
-        });
+        linea2BusStatus.setColumns(20);
+        linea2BusStatus.setRows(5);
+        jScrollPane2.setViewportView(linea2BusStatus);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(63, 63, 63)
-                        .addComponent(jLabel20))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel22)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(autobus2ViajerosField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel24)))
+                .addGap(63, 63, 63)
+                .addComponent(jLabel20)
                 .addContainerGap(85, Short.MAX_VALUE))
+            .addComponent(jScrollPane2)
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -454,12 +436,8 @@ public class FrameControl extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel20)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel22)
-                    .addComponent(autobus2ViajerosField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel24)
-                .addContainerGap(93, Short.MAX_VALUE))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(52, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -551,10 +529,6 @@ public class FrameControl extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_linea2Marquesina4FieldActionPerformed
 
-    private void autobus2ViajerosFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_autobus2ViajerosFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_autobus2ViajerosFieldActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -591,7 +565,6 @@ public class FrameControl extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JTextField autobus2ViajerosField;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -605,8 +578,6 @@ public class FrameControl extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -619,6 +590,7 @@ public class FrameControl extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     public javax.swing.JTextArea linea1BusStatus;
     public javax.swing.JTextField linea1Marquesina0Field;
     private javax.swing.JLabel linea1Marquesina0Label;
@@ -631,6 +603,7 @@ public class FrameControl extends javax.swing.JFrame {
     public javax.swing.JTextField linea1Marquesina4Field;
     private javax.swing.JLabel linea1Marquesina4Label;
     private javax.swing.JPanel linea1Panel;
+    public javax.swing.JTextArea linea2BusStatus;
     public javax.swing.JTextField linea2Marquesina0Field;
     public javax.swing.JTextField linea2Marquesina1Field;
     public javax.swing.JTextField linea2Marquesina2Field;
