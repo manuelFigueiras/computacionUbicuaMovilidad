@@ -55,7 +55,7 @@ public class Positions extends JPanel {
     //Posicion marquesina 3
     private Marquesina marquesinaL12 = new Marquesina(340, 370);
     //Posicion marquesina 4
-    private Marquesina marquesinaL13 = new Marquesina(640, 370);
+    private Marquesina marquesinaL13 = new Marquesina(600, 370);
 
 
   

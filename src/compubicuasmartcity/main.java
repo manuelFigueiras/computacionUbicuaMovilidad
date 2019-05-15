@@ -75,7 +75,7 @@ public class main {
                         
                     }
                 }*/
-                Thread.sleep(5);
+                Thread.sleep(20);
             } catch (InterruptedException ex) {
                 Logger.getLogger(main.class.getName()).log(Level.SEVERE, null, ex);
             }

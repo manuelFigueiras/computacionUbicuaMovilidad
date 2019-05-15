@@ -119,6 +119,10 @@ public class Autobus {
         this.pararSiguienteMarquesina = pararSiguienteMarquesina;
     }
     
+    public boolean getPararSiguienteMarquesina() {
+        return pararSiguienteMarquesina;
+    }
+    
     public void nuevoViaje() {
         this.viaje++;
     }
@@ -129,5 +133,6 @@ public class Autobus {
         /* El autobús tiene un contador en las puertas. Si viajero tiene un método subirBus(), ese método debe 
         añadir el viajero al autobús, y después hacemos el recuento */
     }
+    
     
 }
