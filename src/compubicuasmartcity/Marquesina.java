@@ -73,11 +73,10 @@ public class Marquesina {
     public void subirBus(Autobus bus){
         for (int i=0; i<this.viajeros.size(); i++){
             //Metemos los viajeros que hay en la marquesina en el bus
-            bus.getViajerosBus().add(this.viajeros.get(i));
-            //Reseteamos la marquesina
-            this.viajeros = new ArrayList<>();
-            bus.setPararSiguienteMarquesina(false);
-            
+            bus.getViajerosBus().add(this.viajeros.get(i));       
         }
+        //Reseteamos la marquesina
+        this.viajeros = new ArrayList<>();
+        bus.setPararSiguienteMarquesina(false);
     }
 }

@@ -27,11 +27,11 @@ public class Control extends Thread {
     }
 
     public void run() {
-        int i, j, k;
+        int i, j, k,z;
+        z = 0;
         while (true) {
             for (i = 0; i < lineas.size(); i++) {
                 for (j = 0; j < lineas.get(i).getMarquesinas().size(); j++) {
-                    if (lineas.get(i).getMarquesinas().get(j).getViajerosBus().size() > 0) {
                         if (i == 0) {
                             switch (j) {
                                 case 0:
@@ -41,12 +41,17 @@ public class Control extends Thread {
                                     frameControl.linea1Marquesina1Field.setText(String.valueOf(lineas.get(i).getMarquesinas().get(j).getViajerosBus().size()));
                                     break;
                                 case 2:
+                                  
                                     frameControl.linea1Marquesina2Field.setText(String.valueOf(lineas.get(i).getMarquesinas().get(j).getViajerosBus().size()));
                                     break;
                                 case 3:
                                     frameControl.linea1Marquesina3Field.setText(String.valueOf(lineas.get(i).getMarquesinas().get(j).getViajerosBus().size()));
                                     break;
+                                case 4:
+                                    frameControl.linea1Marquesina3Field.setText(String.valueOf(lineas.get(i).getMarquesinas().get(j).getViajerosBus().size()));
+                                    break;
                             }
+                            
                         } else {
                             switch (j) {
                                 case 0:
@@ -61,22 +66,19 @@ public class Control extends Thread {
                                 case 3:
                                     frameControl.linea2Marquesina3Field.setText(String.valueOf(lineas.get(i).getMarquesinas().get(j).getViajerosBus().size()));
                                     break;
+                                case 4:
+                                    frameControl.linea2Marquesina4Field.setText(String.valueOf(lineas.get(i).getMarquesinas().get(j).getViajerosBus().size()));
+                                    break;
                             }
                         }
-                    }
-
                 }
                 for (k = 0; k < lineas.get(i).getAutobuses().size(); k++) {
                     if (lineas.get(i).getNumLinea() == 1) {
-                        System.out.println("i = " + i + "k = " + k + "numero linea " + lineas.get(i).getNumLinea());
-                        System.out.println("Linea 1: " + lineas.get(i).getAutobuses().get(k).getxBus());
                         frameControl.linea1BusStatus.setText("Autobús " + lineas.get(i).getAutobuses().get(k).getNumBus());
                         frameControl.linea1BusStatus.setText(frameControl.linea1BusStatus.getText() + ":\nViajeros: " + lineas.get(i).getAutobuses().get(k).getViajerosBus().size());
                         frameControl.linea1BusStatus.setText(frameControl.linea1BusStatus.getText() + ":\nPosición: " + lineas.get(i).getAutobuses().get(k).getxBus() + "x " + lineas.get(i).getAutobuses().get(k).getyBus() + "y");
                         frameControl.linea1BusStatus.setText(frameControl.linea1BusStatus.getText() + ":\n ----------------------");
                     } else {
-                        System.out.println("i = " + i + "k = " + k + "numero linea " + lineas.get(i).getNumLinea());
-                        System.out.println("Linea 2: " + lineas.get(i).getAutobuses().get(k).getxBus());
                         frameControl.linea2BusStatus.setText("Autobús " + lineas.get(i).getAutobuses().get(k).getNumBus());
                         frameControl.linea2BusStatus.setText(frameControl.linea2BusStatus.getText() + ":\nViajeros: " + lineas.get(i).getAutobuses().get(k).getViajerosBus().size());
                         frameControl.linea2BusStatus.setText(frameControl.linea2BusStatus.getText() + ":\nPosición: " + lineas.get(i).getAutobuses().get(k).getxBus() + "x " + lineas.get(i).getAutobuses().get(k).getyBus() + "y");
@@ -85,19 +87,16 @@ public class Control extends Thread {
                 }
                 for (int n = 0; n < lineas.get(i).getAutobuses().size(); n++) {
                     if (lineas.get(i).getNumLinea() == 1) {
-                        System.out.println("Por aquiiiiiiiiiiiiiiii1 -----------------");
                         for (int u = 0; u < lineas.get(i).getMarquesinas().size(); u++) {
                             if (lineas.get(i).getMarquesinas().get(u).getViajerosBus().size() > 0) {
-                                System.out.println("Por aquiiiiiiiiiiiiiiii2 -----------------");
-                                System.out.println("Marquesina x: "+lineas.get(i).getMarquesinas().get(u).getxBus());
-                                System.out.println("Bus x: "+lineas.get(i).getAutobuses().get(n).getxBus());
                                 if (lineas.get(i).getAutobuses().get(n).getyBus() == 350 && lineas.get(i).getMarquesinas().get(u).getxBus() == lineas.get(i).getAutobuses().get(n).getxBus()) {
-                                    System.out.println("Por aquiiiiiiiiiiiiiiii3 -----------------");
                                     lineas.get(i).getAutobuses().get(n).setPararSiguienteMarquesina(true);
                                     if (lineas.get(i).getAutobuses().get(n).getPararSiguienteMarquesina() == true) {
                                         lineas.get(i).getAutobuses().get(n).setxBus(lineas.get(i).getMarquesinas().get(u).getxBus());
                                         lineas.get(i).getAutobuses().get(n).setVelocidadX(0);
                                         lineas.get(i).getAutobuses().get(n).setVelocidadY(0);
+                                        lineas.get(i).getMarquesinas().get(u).subirBus(lineas.get(i).getAutobuses().get(n));
+                                        lineas.get(i).getAutobuses().get(n).setVelocidadX(1);
                                    }
                                 }
                             }
@@ -106,7 +105,6 @@ public class Control extends Thread {
                         for (int u = 0; u < lineas.get(i).getMarquesinas().size(); u++) {
                             if (lineas.get(i).getMarquesinas().get(u).getViajerosBus().size() > 0) {
                                 if (lineas.get(i).getAutobuses().get(n).getxBus() == 350) {
-                                    System.out.println("Por aquiiiiiiiiasfasdfasdfsdfiiiiiiii -----------------");
                                     lineas.get(i).getAutobuses().get(n).setPararSiguienteMarquesina(true);
                                 }
                             }
