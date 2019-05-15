@@ -77,7 +77,7 @@ public class Positions extends JPanel {
     //Autobús 2
     public Autobus bus2 = new Autobus(3, 58, 80, new ArrayList<>(),1,1,40,40);
     //Autbus 3
-    public Autobus bus3 = new Autobus(1, 600, 350, new ArrayList<>(),1,0,50,20);
+    public Autobus bus3 = new Autobus(1, 0, 450, new ArrayList<>(),1,0,50,20);
     
     public ArrayList<Marquesina> inicializar(Linea l){
         ArrayList<Marquesina> marque1 = new ArrayList<>();

@@ -91,24 +91,14 @@ public class Control extends Thread {
                                 System.out.println("Por aquiiiiiiiiiiiiiiii2 -----------------");
                                 System.out.println("Marquesina x: "+lineas.get(i).getMarquesinas().get(u).getxBus());
                                 System.out.println("Bus x: "+lineas.get(i).getAutobuses().get(n).getxBus());
-                                if (lineas.get(i).getAutobuses().get(n).getyBus() == 350 && lineas.get(i).getMarquesinas().get(u).getxBus() - 40 == lineas.get(i).getAutobuses().get(n).getxBus()) {
+                                if (lineas.get(i).getAutobuses().get(n).getyBus() == 350 && lineas.get(i).getMarquesinas().get(u).getxBus() == lineas.get(i).getAutobuses().get(n).getxBus()) {
                                     System.out.println("Por aquiiiiiiiiiiiiiiii3 -----------------");
-                                    int posx = lineas.get(i).getAutobuses().get(n).getxBus();
-                                    int posy = lineas.get(i).getAutobuses().get(n).getyBus();
-                                    double velx = lineas.get(i).getAutobuses().get(n).getVelocidadX();
-                                    double vely = lineas.get(i).getAutobuses().get(n).getVelocidadY();
                                     lineas.get(i).getAutobuses().get(n).setPararSiguienteMarquesina(true);
-                                    do {
-                                        lineas.get(i).getAutobuses().get(n).setxBus(600);
-                                        lineas.get(i).getAutobuses().get(n).setyBus(350);
+                                    if (lineas.get(i).getAutobuses().get(n).getPararSiguienteMarquesina() == true) {
+                                        lineas.get(i).getAutobuses().get(n).setxBus(lineas.get(i).getMarquesinas().get(u).getxBus());
                                         lineas.get(i).getAutobuses().get(n).setVelocidadX(0);
                                         lineas.get(i).getAutobuses().get(n).setVelocidadY(0);
-                                        lineas.get(i).getMarquesinas().get(u).subirBus(lineas.get(i).getAutobuses().get(n));
-                                    } while (lineas.get(i).getAutobuses().get(n).getPararSiguienteMarquesina() == true /*&& !lineas.get(i).getMarquesinas().get(u).getViajerosBus().isEmpty()*/);
-                                   /* lineas.get(i).getAutobuses().get(n).setxBus(posx);
-                                    lineas.get(i).getAutobuses().get(n).setyBus(posy);
-                                    lineas.get(i).getAutobuses().get(n).setVelocidadX(velx);
-                                    lineas.get(i).getAutobuses().get(n).setVelocidadY(vely);*/
+                                   }
                                 }
                             }
                         }
