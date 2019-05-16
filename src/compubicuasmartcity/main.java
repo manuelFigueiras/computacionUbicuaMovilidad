@@ -54,6 +54,10 @@ public class main {
         
         Viajero v1 = new Viajero("Alfonso","López Pérez",true,new Tarjeta(1,new Coordenadas(0,0),8.0f),5,5);
         linea1.getMarquesinas().get(2).getViajerosBus().add(v1);
+        
+
+        Viajero v2 = new Viajero("Alfonso","López Pérez",true,new Tarjeta(1,new Coordenadas(0,0),8.0f),5,5);
+        linea2.getMarquesinas().get(3).getViajerosBus().add(v1);
 
         
     
