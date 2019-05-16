@@ -90,19 +90,6 @@ public class Control extends Thread {
                 for (int n = 0; n < lineas.get(i).getAutobuses().size(); n++) {
                     if (lineas.get(i).getNumLinea() == 1) {
                         for (int u = 0; u < lineas.get(i).getMarquesinas().size(); u++) {
-                            /*if (lineas.get(i).getAutobuses().get(n).viaje % 2 == 0 && u == 0) {
-                                try {
-                                    sleep(7000);
-                                } catch (InterruptedException ex) {
-                                    Logger.getLogger(Control.class.getName()).log(Level.SEVERE, null, ex);
-                                }
-                            } else if (lineas.get(i).getAutobuses().get(n).viaje % 2 != 0 && u == (lineas.get(i).getMarquesinas().size() - 1)) {
-                                try {
-                                    sleep(7000);
-                                } catch (InterruptedException ex) {
-                                    Logger.getLogger(Control.class.getName()).log(Level.SEVERE, null, ex);
-                                }
-                            }*/
                             if (lineas.get(i).getMarquesinas().get(u).getViajerosBus().size() > 0) {
                                 double vx = lineas.get(i).getAutobuses().get(n).getVelocidadX();
                                 double vy = lineas.get(i).getAutobuses().get(n).getVelocidadY();
@@ -129,11 +116,36 @@ public class Control extends Thread {
                                 }
                             }
                         }
-                    } else {
+                    } else if (lineas.get(i).getNumLinea() == 2){
                         for (int u = 0; u < lineas.get(i).getMarquesinas().size(); u++) {
                             if (lineas.get(i).getMarquesinas().get(u).getViajerosBus().size() > 0) {
-                                if (lineas.get(i).getAutobuses().get(n).getxBus() == 350) {
+                                System.out.println("----------------------------------------------------------------> 1");
+                                double vx1 = lineas.get(i).getAutobuses().get(n).getVelocidadX();
+                                double vy1 = lineas.get(i).getAutobuses().get(n).getVelocidadY();
+                                int px1 = lineas.get(i).getAutobuses().get(n).getxBus();
+                                int py1 = lineas.get(i).getAutobuses().get(n).getyBus();
+                                if (lineas.get(i).getAutobuses().get(n).getxBus() == 400 && lineas.get(i).getMarquesinas().get(u).getyBus() == lineas.get(i).getAutobuses().get(n).getyBus()) {
+                                                                    System.out.println("----------------------------------------------------------------> 2");
+
                                     lineas.get(i).getAutobuses().get(n).setPararSiguienteMarquesina(true);
+                                    if (lineas.get(i).getAutobuses().get(n).getPararSiguienteMarquesina() == true) {
+                                                                       System.out.println("----------------------------------------------------------------> 3");
+
+                                        lineas.get(i).getAutobuses().get(n).setyBus(lineas.get(i).getMarquesinas().get(u).getyBus());
+                                        lineas.get(i).getAutobuses().get(n).setVelocidadX(0);
+                                        lineas.get(i).getAutobuses().get(n).setVelocidadY(0);
+                                        lineas.get(i).getMarquesinas().get(u).subirBus(lineas.get(i).getAutobuses().get(n));
+                                        //lineas.get(i).getAutobuses().get(n).setVelocidadX(1);
+                                        try {
+                                            sleep(3000);
+                                        } catch (InterruptedException ex) {
+                                            Logger.getLogger(Control.class.getName()).log(Level.SEVERE, null, ex);
+                                        }
+                                    }
+                                    lineas.get(i).getAutobuses().get(n).setxBus(px1);
+                                    lineas.get(i).getAutobuses().get(n).setyBus(py1);
+                                    lineas.get(i).getAutobuses().get(n).setVelocidadX(vx1);
+                                    lineas.get(i).getAutobuses().get(n).setVelocidadY(vy1);
                                 }
                             }
                         }
