@@ -27,50 +27,50 @@ public class Control extends Thread {
     }
 
     public void run() {
-        int i, j, k,z;
+        int i, j, k, z;
         z = 0;
         while (true) {
             for (i = 0; i < lineas.size(); i++) {
                 for (j = 0; j < lineas.get(i).getMarquesinas().size(); j++) {
-                        if (i == 0) {
-                            switch (j) {
-                                case 0:
-                                    frameControl.linea1Marquesina0Field.setText(String.valueOf(lineas.get(i).getMarquesinas().get(j).getViajerosBus().size()));
-                                    break;
-                                case 1:
-                                    frameControl.linea1Marquesina1Field.setText(String.valueOf(lineas.get(i).getMarquesinas().get(j).getViajerosBus().size()));
-                                    break;
-                                case 2:
-                                  
-                                    frameControl.linea1Marquesina2Field.setText(String.valueOf(lineas.get(i).getMarquesinas().get(j).getViajerosBus().size()));
-                                    break;
-                                case 3:
-                                    frameControl.linea1Marquesina3Field.setText(String.valueOf(lineas.get(i).getMarquesinas().get(j).getViajerosBus().size()));
-                                    break;
-                                case 4:
-                                    frameControl.linea1Marquesina4Field.setText(String.valueOf(lineas.get(i).getMarquesinas().get(j).getViajerosBus().size()));
-                                    break;
-                            }
-                            
-                        } else {
-                            switch (j) {
-                                case 0:
-                                    frameControl.linea2Marquesina0Field.setText(String.valueOf(lineas.get(i).getMarquesinas().get(j).getViajerosBus().size()));
-                                    break;
-                                case 1:
-                                    frameControl.linea2Marquesina1Field.setText(String.valueOf(lineas.get(i).getMarquesinas().get(j).getViajerosBus().size()));
-                                    break;
-                                case 2:
-                                    frameControl.linea2Marquesina2Field.setText(String.valueOf(lineas.get(i).getMarquesinas().get(j).getViajerosBus().size()));
-                                    break;
-                                case 3:
-                                    frameControl.linea2Marquesina3Field.setText(String.valueOf(lineas.get(i).getMarquesinas().get(j).getViajerosBus().size()));
-                                    break;
-                                case 4:
-                                    frameControl.linea2Marquesina4Field.setText(String.valueOf(lineas.get(i).getMarquesinas().get(j).getViajerosBus().size()));
-                                    break;
-                            }
+                    if (i == 0) {
+                        switch (j) {
+                            case 0:
+                                frameControl.linea1Marquesina0Field.setText(String.valueOf(lineas.get(i).getMarquesinas().get(j).getViajerosBus().size()));
+                                break;
+                            case 1:
+                                frameControl.linea1Marquesina1Field.setText(String.valueOf(lineas.get(i).getMarquesinas().get(j).getViajerosBus().size()));
+                                break;
+                            case 2:
+
+                                frameControl.linea1Marquesina2Field.setText(String.valueOf(lineas.get(i).getMarquesinas().get(j).getViajerosBus().size()));
+                                break;
+                            case 3:
+                                frameControl.linea1Marquesina3Field.setText(String.valueOf(lineas.get(i).getMarquesinas().get(j).getViajerosBus().size()));
+                                break;
+                            case 4:
+                                frameControl.linea1Marquesina4Field.setText(String.valueOf(lineas.get(i).getMarquesinas().get(j).getViajerosBus().size()));
+                                break;
                         }
+
+                    } else {
+                        switch (j) {
+                            case 0:
+                                frameControl.linea2Marquesina0Field.setText(String.valueOf(lineas.get(i).getMarquesinas().get(j).getViajerosBus().size()));
+                                break;
+                            case 1:
+                                frameControl.linea2Marquesina1Field.setText(String.valueOf(lineas.get(i).getMarquesinas().get(j).getViajerosBus().size()));
+                                break;
+                            case 2:
+                                frameControl.linea2Marquesina2Field.setText(String.valueOf(lineas.get(i).getMarquesinas().get(j).getViajerosBus().size()));
+                                break;
+                            case 3:
+                                frameControl.linea2Marquesina3Field.setText(String.valueOf(lineas.get(i).getMarquesinas().get(j).getViajerosBus().size()));
+                                break;
+                            case 4:
+                                frameControl.linea2Marquesina4Field.setText(String.valueOf(lineas.get(i).getMarquesinas().get(j).getViajerosBus().size()));
+                                break;
+                        }
+                    }
                 }
                 for (k = 0; k < lineas.get(i).getAutobuses().size(); k++) {
                     if (lineas.get(i).getNumLinea() == 1) {
@@ -103,10 +103,24 @@ public class Control extends Thread {
                                         lineas.get(i).getAutobuses().get(n).setVelocidadY(0);
                                         lineas.get(i).getMarquesinas().get(u).subirBus(lineas.get(i).getAutobuses().get(n));
                                         //lineas.get(i).getAutobuses().get(n).setVelocidadX(1);
-                                        try {
-                                            sleep(3000);
-                                        } catch (InterruptedException ex) {
-                                            Logger.getLogger(Control.class.getName()).log(Level.SEVERE, null, ex);
+                                        if (lineas.get(i).getAutobuses().get(n).viaje % 2 == 0 && u == 0) {
+                                            try {
+                                                sleep(7000);
+                                            } catch (InterruptedException ex) {
+                                                Logger.getLogger(Control.class.getName()).log(Level.SEVERE, null, ex);
+                                            }
+                                        } else if (lineas.get(i).getAutobuses().get(n).viaje % 2 != 0 && u == (lineas.get(i).getMarquesinas().size() - 1)) {
+                                            try {
+                                                sleep(7000);
+                                            } catch (InterruptedException ex) {
+                                                Logger.getLogger(Control.class.getName()).log(Level.SEVERE, null, ex);
+                                            }
+                                        } else {
+                                            try {
+                                                sleep(3000);
+                                            } catch (InterruptedException ex) {
+                                                Logger.getLogger(Control.class.getName()).log(Level.SEVERE, null, ex);
+                                            }
                                         }
                                         lineas.get(i).getAutobuses().get(n).setxBus(px);
                                         lineas.get(i).getAutobuses().get(n).setxBus(py);
