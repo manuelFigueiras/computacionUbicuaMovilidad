@@ -9,8 +9,6 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
-import static java.lang.Math.sin;
-import static java.lang.Thread.sleep;
 import java.util.ArrayList;
 import javax.swing.JPanel;
 
@@ -51,7 +49,7 @@ public class Positions extends JPanel {
     // Marquesinas Línea 1
     private Marquesina marquesinaL10 = new Marquesina(0, 370);
     private Marquesina marquesinaL11 = new Marquesina(150,370);
-     private Marquesina marquesinaL12 = new Marquesina(340, 370);
+    private Marquesina marquesinaL12 = new Marquesina(340, 370);
     private Marquesina marquesinaL13 = new Marquesina(490,370);
     private Marquesina marquesinaL14 = new Marquesina(600, 370);
     // Marquesinas Linea 2
@@ -126,6 +124,7 @@ public class Positions extends JPanel {
         if (bus1.getxBus() == 600 || bus1.getyBus() == 600){
             flag1=1;
             bus1.setxBus(bus1.getxBus() - 100);
+            bus1.nuevoViaje();
         }
         
         /*if (bus2.getxBus() == 600 || bus2.getyBus() == 600){
@@ -136,6 +135,7 @@ public class Positions extends JPanel {
         if (bus1.getxBus() == 0 || bus1.getyBus() == 0){
             flag1=0;
             bus1.setxBus(bus1.getxBus() + 100);
+            bus1.nuevoViaje();
         }
     /*    if (bus2.getxBus() == 0 || bus2.getyBus() == 0){
             flag2=0;
@@ -174,6 +174,7 @@ public class Positions extends JPanel {
          if (bus3.getxBus() == 600 || bus3.getyBus() == 600){
             flag3=1;
             bus3.setyBus(bus3.getyBus() + 100);
+            bus3.nuevoViaje();
         }
         
     /*    if (bus2.getxBus() == 0 || bus2.getyBus() == 0){
@@ -184,6 +185,8 @@ public class Positions extends JPanel {
         if (bus3.getxBus() == 0 || bus3.getyBus() == 0){
             flag3=0;
             bus3.setyBus(bus3.getyBus() - 100);
+            
+            bus3.nuevoViaje();
         }
         
     /*    if (flag2 == 1){

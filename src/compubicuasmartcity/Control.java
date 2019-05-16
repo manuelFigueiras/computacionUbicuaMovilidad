@@ -48,7 +48,7 @@ public class Control extends Thread {
                                     frameControl.linea1Marquesina3Field.setText(String.valueOf(lineas.get(i).getMarquesinas().get(j).getViajerosBus().size()));
                                     break;
                                 case 4:
-                                    frameControl.linea1Marquesina3Field.setText(String.valueOf(lineas.get(i).getMarquesinas().get(j).getViajerosBus().size()));
+                                    frameControl.linea1Marquesina4Field.setText(String.valueOf(lineas.get(i).getMarquesinas().get(j).getViajerosBus().size()));
                                     break;
                             }
                             
@@ -75,11 +75,13 @@ public class Control extends Thread {
                 for (k = 0; k < lineas.get(i).getAutobuses().size(); k++) {
                     if (lineas.get(i).getNumLinea() == 1) {
                         frameControl.linea1BusStatus.setText("Autobús " + lineas.get(i).getAutobuses().get(k).getNumBus());
+                        frameControl.linea1BusStatus.setText(frameControl.linea1BusStatus.getText() + ":\nViaje: " + lineas.get(i).getAutobuses().get(k).getViaje());
                         frameControl.linea1BusStatus.setText(frameControl.linea1BusStatus.getText() + ":\nViajeros: " + lineas.get(i).getAutobuses().get(k).getViajerosBus().size());
                         frameControl.linea1BusStatus.setText(frameControl.linea1BusStatus.getText() + ":\nPosición: " + lineas.get(i).getAutobuses().get(k).getxBus() + "x " + lineas.get(i).getAutobuses().get(k).getyBus() + "y");
                         frameControl.linea1BusStatus.setText(frameControl.linea1BusStatus.getText() + ":\n ----------------------");
                     } else {
                         frameControl.linea2BusStatus.setText("Autobús " + lineas.get(i).getAutobuses().get(k).getNumBus());
+                        frameControl.linea2BusStatus.setText(frameControl.linea2BusStatus.getText() + ":\nViaje: " + lineas.get(i).getAutobuses().get(k).getViaje());
                         frameControl.linea2BusStatus.setText(frameControl.linea2BusStatus.getText() + ":\nViajeros: " + lineas.get(i).getAutobuses().get(k).getViajerosBus().size());
                         frameControl.linea2BusStatus.setText(frameControl.linea2BusStatus.getText() + ":\nPosición: " + lineas.get(i).getAutobuses().get(k).getxBus() + "x " + lineas.get(i).getAutobuses().get(k).getyBus() + "y");
                         frameControl.linea2BusStatus.setText(frameControl.linea2BusStatus.getText() + ":\n ----------------------");
