@@ -90,43 +90,19 @@ public class Control extends Thread {
                 for (int n = 0; n < lineas.get(i).getAutobuses().size(); n++) {
                     if (lineas.get(i).getNumLinea() == 1) {
                         for (int u = 0; u < lineas.get(i).getMarquesinas().size(); u++) {
-
-                            double vx9 = lineas.get(i).getAutobuses().get(n).getVelocidadX();
-                            double vy9 = lineas.get(i).getAutobuses().get(n).getVelocidadY();
-                            int px9 = lineas.get(i).getAutobuses().get(n).getxBus();
-                            int py9 = lineas.get(i).getAutobuses().get(n).getyBus();
-
-                            if (lineas.get(i).getAutobuses().get(n).viaje % 2 == 0 && u == 0) {
-                                lineas.get(i).getAutobuses().get(n).setxBus(lineas.get(i).getMarquesinas().get(u).getxBus());
-                                lineas.get(i).getAutobuses().get(n).setVelocidadX(0);
-                                lineas.get(i).getAutobuses().get(n).setVelocidadY(0);
-                                lineas.get(i).getMarquesinas().get(u).subirBus(lineas.get(i).getAutobuses().get(n));
-                                //lineas.get(i).getAutobuses().get(n).setVelocidadX(1);
+                            /*if (lineas.get(i).getAutobuses().get(n).viaje % 2 == 0 && u == 0) {
                                 try {
                                     sleep(7000);
                                 } catch (InterruptedException ex) {
                                     Logger.getLogger(Control.class.getName()).log(Level.SEVERE, null, ex);
                                 }
-                                lineas.get(i).getAutobuses().get(n).setxBus(px9);
-                                lineas.get(i).getAutobuses().get(n).setxBus(py9);
-                                lineas.get(i).getAutobuses().get(n).setVelocidadX(vx9);
-                                lineas.get(i).getAutobuses().get(n).setVelocidadY(vy9);
                             } else if (lineas.get(i).getAutobuses().get(n).viaje % 2 != 0 && u == (lineas.get(i).getMarquesinas().size() - 1)) {
-                                lineas.get(i).getAutobuses().get(n).setxBus(lineas.get(i).getMarquesinas().get(u).getxBus());
-                                lineas.get(i).getAutobuses().get(n).setVelocidadX(0);
-                                lineas.get(i).getAutobuses().get(n).setVelocidadY(0);
-                                lineas.get(i).getMarquesinas().get(u).subirBus(lineas.get(i).getAutobuses().get(n));
-                                //lineas.get(i).getAutobuses().get(n).setVelocidadX(1);
                                 try {
                                     sleep(7000);
                                 } catch (InterruptedException ex) {
                                     Logger.getLogger(Control.class.getName()).log(Level.SEVERE, null, ex);
                                 }
-                                lineas.get(i).getAutobuses().get(n).setxBus(px9);
-                                lineas.get(i).getAutobuses().get(n).setxBus(py9);
-                                lineas.get(i).getAutobuses().get(n).setVelocidadX(vx9);
-                                lineas.get(i).getAutobuses().get(n).setVelocidadY(vy9);
-                            }
+                            }*/
                             if (lineas.get(i).getMarquesinas().get(u).getViajerosBus().size() > 0) {
                                 double vx = lineas.get(i).getAutobuses().get(n).getVelocidadX();
                                 double vy = lineas.get(i).getAutobuses().get(n).getVelocidadY();
